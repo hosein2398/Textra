@@ -33,26 +33,26 @@ And in your instance data:
 ```
 
 ## Props
-### `data`  
+#### `data`  
 Type : Array  
 Description : Should be array of things you want to slide.  
 
 ---
 
-### `timer`  
+#### `timer`  
 Type : Number
 Description : Defines gap between each slide as second.  
 
 ---
 
-### `filter`  
+#### `filter`  
 Type : String  
 Description : Defines type of filter you want to use when sliding.  
 Default : `simple`  
 
 ---
 
-### `interval`  
+#### `interval`  
 Type : Number  
 Description : -----  
  
