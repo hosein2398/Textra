@@ -27,37 +27,37 @@ And in your instance data:
 ```js
   data () {
     return {
-      words: ["My text to show","palnet","fail",sample text"]
+      words: ["My text to show","palnet","fail","sample text"]
     }
   }
 ```
 
 ## Props
 `data`  
-Type : Array
-Description : Should be array of things you want to slide.
+Type : Array  
+Description : Should be array of things you want to slide.  
 
-`timer`
-Type : Number
-Description : Defines gap between each slide as second.
+`timer`  
+Type : Number  
+Description : Defines gap between each slide as second.  
 
-`filter`
-Type : String
-Description : Defines type of filter you want to use when sliding.
-Default : `simple`
+`filter`  
+Type : String  
+Description : Defines type of filter you want to use when sliding.  
+Default : `simple`  
 
-`interval`
-Type : Number
-Description : -----
-
-## Filters
-There are 9 types of filters available for now:
-`simple`
-`bottom-top`
-`top-bottom`
-`right-left`
-`left-right`
-`press`
-`scale`
-`flash`
-`flip`
+`interval`  
+Type : Number  
+Description : -----  
+ 
+## Filters  
+There are 9 types of filters available for now:   
+`simple`  
+`bottom-top`  
+`top-bottom`  
+`right-left`  
+`left-right`  
+`press`  
+`scale`  
+`flash`  
+`flip`  
