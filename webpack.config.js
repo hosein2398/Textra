@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'textra.js'
   },
   module: {
     rules: [

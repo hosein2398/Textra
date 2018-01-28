@@ -4,14 +4,26 @@
   "version": "1.0.0",
   "author": "hosein <hosein2398@gmail.com>",
   "license": "MIT",
-  "main" : "src/main.js",
+  "homepage": "https://github.com/hosein2398/Textra",
+  "bugs": {
+    "url": "https://github.com/hosein2398/Textra/issues"
+  },
+  "keywords": [
+    "vue",
+    "slide text",
+    "text animation"
+  ],
+  "main": "src/main.js",
   "scripts": {
-    "test": ""
+    "test": "./node_modules/.bin/ava test/test.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
     "vue": "^2.5.11"
   },
   "devDependencies": {
+    "ava": "^0.25.0",
+    "avoriaz": "^6.3.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
