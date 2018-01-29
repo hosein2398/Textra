@@ -31,7 +31,7 @@
         currentWord: this.data[0],
         liStl: null,
         dataCounter: 0,
-        displayState: "showen",
+        displayState: "shown",
         filters: {
           'simple': ["opacity:0", "opacity:1"],
           'bottom-top': ["transform:translateY(10px);opacity:0;", "transform:translateY(0px);opacity:1;"],
@@ -52,21 +52,19 @@
     },
     created() {
       var theInterval = setInterval(() => {
-        if (this.displayState === 'showen') {
+        if (this.displayState === 'shown') {
           this.liStl = this.filters[this.filter][0];
           this.displayState = 'hidden';
   
         } else {
           this.liStl = this.filters[this.filter][1];
-          this.displayState = 'showen';
+          this.displayState = 'shown';
           this.dataCounter++;
           this.currentWord = this.data[this.dataCounter];
         }
   
         if (this.dataCounter === this.data.length) {
           clearInterval(theInterval);
-          console.log(this.data.length +'--' +this.dataCounter)
-          alert(234)
         }
       }, (+this.timer + +this.interval) * 1000);
     }

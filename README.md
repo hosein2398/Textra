@@ -58,12 +58,12 @@ Description : -----
  
 ## Filters  
 There are 9 types of filters available for now:   
-`simple`  
-`bottom-top`  
-`top-bottom`  
-`right-left`  
-`left-right`  
-`press`  
-`scale`  
-`flash`  
-`flip`  
++ `simple`  
++ `bottom-top`  
++ `top-bottom`  
++ `right-left`  
++ `left-right`  
++ `press`  
++ `scale`  
++ `flash`  
++ `flip`  
