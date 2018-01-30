@@ -5,7 +5,7 @@
 
 ## Installing
 ```
-npm i -D Textra  
+npm i -D vue-textra  
 ```
 Then inside you project, start using it :
 ```js
