@@ -1,5 +1,5 @@
 {
-  "name": "textra",
+  "name": "vue-textra",
   "description": "Vue js text sliding plugin",
   "version": "1.0.0",
   "author": "hosein <hosein2398@gmail.com>",
@@ -7,6 +7,10 @@
   "homepage": "https://github.com/hosein2398/Textra",
   "bugs": {
     "url": "https://github.com/hosein2398/Textra/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hosein2398/Textra"
   },
   "keywords": [
     "vue",

@@ -10,7 +10,7 @@ npm i -D vue-textra
 Then inside you project, start using it :
 ```js
 import Vue from 'vue'
-import Textra from 'textra'
+import Textra from 'vue-textra'
 
 Vue.use(Textra);
 new Vue({
@@ -25,11 +25,13 @@ Inside any of you components:
 ```
 And in your instance data:
 ```js
+//...
   data () {
     return {
       words: ["My text to show","palnet","fail","sample text"]
     }
   }
+//...
 ```
 
 ## Props
