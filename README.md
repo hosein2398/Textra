@@ -43,7 +43,7 @@ Description : Should be array of things you want to slide.
 ---
 
 #### `timer`  
-Type : Number
+Type : Number  
 Description : Defines gap between each slide as second.  
 
 ---
@@ -55,10 +55,6 @@ Default : `simple`
 
 ---
 
-#### `interval`  
-Type : Number  
-Description : -----  
- 
 ## Filters  
 There are 9 types of filters available for now:   
 + `simple`  
