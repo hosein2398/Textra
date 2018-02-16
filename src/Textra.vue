@@ -17,15 +17,17 @@
         default: 'simple'
       },
       timer: {
-        type: String,
+        type: Number,
+        default:1,
         required: true
       },
-      interval: {
-        type: Number,
-        default: 0
-      }
-    },
-    data() {
+      infinite: {
+        type: Boolean,
+        default: false,
+      
+    }
+  },
+  data() {
       return {
         defaultStyle: 'transition: ' + this.timer + 's;',
         currentWord: this.data[0],
@@ -64,9 +66,16 @@
         }
   
         if (this.dataCounter === this.data.length) {
-          clearInterval(theInterval);
+          if (this.infinite) {
+            this.dataCounter = 0;
+          } else {
+            clearInterval(theInterval);
+  
+          }
         }
-      }, (+this.timer + +this.interval) * 1000);
+  
+  
+      }, (+this.timer) * 1000);
     }
   }
 </script>
