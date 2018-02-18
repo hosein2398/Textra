@@ -19,7 +19,6 @@
       timer: {
         type: Number,
         default:1,
-        required: true
       },
       infinite: {
         type: Boolean,
