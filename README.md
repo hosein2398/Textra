@@ -1,5 +1,5 @@
 
-# Textra
+# Textra  [![Build Status](https://travis-ci.org/hosein2398/Textra.svg?branch=master)](https://travis-ci.org/hosein2398/Textra)
 
 > A Vue.js add-on to slide your text.
 
