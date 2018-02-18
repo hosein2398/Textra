@@ -25,6 +25,11 @@
   "dependencies": {
     "vue": "^2.5.11"
   },
+  "ava": {
+    "require": [
+      "./test/.setup.js"
+    ]
+  },
   "devDependencies": {
     "ava": "^0.25.0",
     "avoriaz": "^6.3.0",
@@ -32,9 +37,13 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
+    "browser-env": "^3.2.5",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
+    "require-extension-hooks": "^0.3.2",
+    "require-extension-hooks-babel": "^0.1.1",
+    "require-extension-hooks-vue": "^0.4.1",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
