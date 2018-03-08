@@ -66,13 +66,13 @@
   
         if (this.dataCounter === this.data.length) {
           if (this.infinite) {
-            this.dataCounter = 0;
+            // Changing 0 to -1 for temporary bug fix of #2
+            this.dataCounter = -1;
           } else {
             clearInterval(theInterval);
   
           }
         }
-  
   
       }, (+this.timer) * 1000);
     }
