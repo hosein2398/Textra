@@ -36,6 +36,7 @@
         liStl: null,
         dataCounter: 0,
         displayState: "shown",
+        intervalId:null,
         filters: {
           'simple': ["opacity:0", "opacity:1"],
           'bottom-top': ["transform:translateY(10px);opacity:0;", "transform:translateY(0px);opacity:1;"],
@@ -64,7 +65,7 @@
         animations = Object.keys(this.filters)
         filter = this.filters[animations[index]]
       }
-      const theInterval = setInterval(() => {
+      this.intervalId = setInterval(() => {
         if (this.displayState === 'shown') {
           this.liStl = filter[0];
           this.displayState = 'hidden';
@@ -86,13 +87,16 @@
             // Changing 0 to -1 for temporary bug fix of #2
             this.dataCounter = -1;
           } else {
-            clearInterval(theInterval);
+            clearInterval(this.intervalId);
 
           }
         }
 
       }, (+this.timer) * 1000);
-    }
+    },
+    beforeDestroy(){
+      clearInterval(this.intervalId)
+	  }
   }
 </script>
 
