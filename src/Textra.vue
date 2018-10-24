@@ -54,10 +54,15 @@
     created() {
       var theInterval = setInterval(() => {
         if (this.displayState === 'shown') {
+          //we hide in this block
           this.liStl = this.filters[this.filter][0];
           this.displayState = 'hidden';
-  
+          //fixing #5
+          var tmpCounter = this.dataCounter + 1;
+          if(tmpCounter === this.data.length) this.dataCounter++;
+            
         } else {
+          //we show in this block
           this.liStl = this.filters[this.filter][1];
           this.displayState = 'shown';
           this.dataCounter++;
