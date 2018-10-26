@@ -11,7 +11,7 @@ Then inside you project, start using it :
 ```js
 import Vue from 'vue'
 import App from './App.vue'
-import Textra from 'vue-textra'
+import {Textra} from 'vue-textra'
 
 Vue.use(Textra);
 new Vue({
