@@ -1,13 +1,7 @@
-import Textra from "./Textra.vue";
+import TextraPlugin from "./Textra.vue";
 
-const TextraPlugin = {
+export const Textra = {
   install(Vue) {
-    Vue.component("textra", Textra);
+    Vue.component("textra", TextraPlugin);
   }
 };
-
-export default TextraPlugin;
-
-if (typeof window !== "undefined" && window.Vue) {
-  window.Vue.use(TextraPlugin);
-}
