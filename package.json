@@ -17,13 +17,13 @@
     "slide text",
     "text animation"
   ],
-  "main": "src/main.js",
+  "main": "dist/textra.js",
+  "jsdelivr": "dist/textra.min.js",
   "scripts": {
     "test": "./node_modules/.bin/ava test/test.js",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
-  },
-  "dependencies": {
-    "vue": "^2.5.11"
+    "build": "npm run build:typical && npm run build:min",
+    "build:typical": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build:min": "cross-env NODE_ENV=production webpack --progress --hide-modules  --config webpack.min.config.js"
   },
   "ava": {
     "require": [
@@ -48,5 +48,6 @@
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
-  }
+  },
+  "dependencies": {}
 }
