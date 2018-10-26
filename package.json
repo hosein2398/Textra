@@ -44,6 +44,7 @@
     "require-extension-hooks": "^0.3.2",
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^0.4.1",
+    "vue": "^2.5.17",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
