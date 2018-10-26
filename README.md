@@ -19,6 +19,14 @@ new Vue({
   render: h => h(App)
 })
 ```
+To use inside browser:
+```html
+<script src='https://cdn.jsdelivr.net/npm/vue-textra@latest/dist/textra.min.js'></script>
+```
+Then:
+```js
+Vue.use(Textra);
+```
 ## Usage
 Inside any of your components:
 ```html
