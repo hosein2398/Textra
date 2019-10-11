@@ -1,7 +1,7 @@
 {
   "name": "vue-textra",
   "description": "Vue js text sliding plugin",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "hosein <hosein2398@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/hosein2398/Textra",
@@ -17,26 +17,19 @@
     "slide text",
     "text animation"
   ],
-  "main": "dist/textra.js",
-  "jsdelivr": "dist/textra.min.js",
+  "main": "dist/main.js",
+  "module": "dist/main.esm.js",
+  "jsdelivr": "dist/main.umd.min.js",
   "scripts": {
     "test": "./node_modules/.bin/ava test/test.js",
-    "build": "npm run build:typical && npm run build:min",
-    "build:typical": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "build:min": "cross-env NODE_ENV=production webpack --progress --hide-modules  --config webpack.min.config.js"
-  },
-  "ava": {
-    "require": [
-      "./test/.setup.js"
-    ]
+    "build": "bili ./src/main.js --format umd-min,cjs,esm --module-name Textra --plugins.vue.css false"
   },
   "devDependencies": {
+    "@babel/preset-stage-3": "^7.0.0",
     "ava": "^0.25.0",
     "avoriaz": "^6.3.0",
-    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-stage-3": "^6.24.1",
+    "bili": "^4.8.1",
     "browser-env": "^3.2.5",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
@@ -44,11 +37,17 @@
     "require-extension-hooks": "^0.3.2",
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^0.4.1",
-    "vue": "^2.5.17",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue": "^2.6.10",
     "vue-loader": "^13.0.5",
-    "vue-template-compiler": "^2.4.4",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "ava": {
+    "require": [
+      "./test/.setup.js"
+    ]
+  }
 }

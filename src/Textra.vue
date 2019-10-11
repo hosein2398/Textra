@@ -18,7 +18,7 @@
       },
       timer: {
         type: Number,
-        default:1,
+        default:2,
       },
       infinite: {
         type: Boolean,
@@ -28,7 +28,7 @@
   },
   data() {
       return {
-        defaultStyle: 'transition: ' + this.timer + 's;',
+        defaultStyle: 'transition: 1s;',
         currentWord: this.data[0],
         liStl: null,
         dataCounter: 0,
@@ -53,32 +53,23 @@
     },
     created() {
       var theInterval = setInterval(() => {
-        if (this.displayState === 'shown') {
-          //we hide in this block
           this.liStl = this.filters[this.filter][0];
-          this.displayState = 'hidden';
           //fixing #5
-          var tmpCounter = this.dataCounter + 1;
-          if(tmpCounter === this.data.length) this.dataCounter++;
-            
-        } else {
-          //we show in this block
-          this.liStl = this.filters[this.filter][1];
-          this.displayState = 'shown';
-          this.dataCounter++;
-          this.currentWord = this.data[this.dataCounter];
-        }
-  
-        if (this.dataCounter === this.data.length) {
-          if (this.infinite) {
-            // Changing 0 to -1 for temporary bug fix of #2
-            this.dataCounter = -1;
-          } else {
-            clearInterval(theInterval);
-  
-          }
-        }
-  
+          setTimeout(() => {
+            this.liStl = this.filters[this.filter][1];
+            if(this.dataCounter !== this.data.length) this.dataCounter++;
+            this.currentWord = this.data[this.dataCounter];
+            if (this.dataCounter === this.data.length) {
+              if (this.infinite) {
+              // Changing 0 to -1 for temporary bug fix of #2
+              this.dataCounter = 0;
+              this.currentWord = this.data[this.dataCounter];
+            } else {
+              clearInterval(theInterval);
+              }
+            }
+          }, 1000);
+
       }, (+this.timer) * 1000);
     }
   }

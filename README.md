@@ -11,7 +11,7 @@ Then inside you project, start using it :
 ```js
 import Vue from 'vue'
 import App from './App.vue'
-import {Textra} from 'vue-textra'
+import Textra from 'vue-textra'
 
 Vue.use(Textra);
 new Vue({
@@ -37,7 +37,7 @@ And in your instance data:
 //...
   data () {
     return {
-      words: ["My text to show","palnet","fail","sample text"]
+      words: ["My text to show", "Great news here!", "Vue is great", "Sample Text"]
     }
   }
 //...
