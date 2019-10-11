@@ -30,7 +30,7 @@ Vue.use(Textra);
 ## Usage
 Inside any of your components:
 ```html
- <textra :data='words' :timer="1.1" filter="flash" />
+ <textra :data='words' :timer="4" filter="flash" />
 ```
 And in your instance data:
 ```js
@@ -45,7 +45,7 @@ And in your instance data:
 
 Another example :
 ```html
- <textra :data='words' :timer="1.1" :infinite='true' filter="left-right" />
+ <textra :data='words' :timer="3.1" :infinite='true' filter="left-right" />
 ```
 This one will loop around for ever.
 ## Props
@@ -58,7 +58,7 @@ Description : Should be array of things you want to slide.
 #### `timer`  
 Type : Number  
 Description : Defines gap between each slide as second.  
-Default : `1` 
+Default : `2` 
 
 ---
 
