@@ -5,9 +5,9 @@
 
 ## Installing
 ```
-npm i -D vue-textra  
+npm i -D vue-textra
 ```
-Then inside you project, start using it :
+Then inside your project, start using it:
 ```js
 import Vue from 'vue'
 import App from './App.vue'
@@ -49,40 +49,40 @@ Another example :
 ```
 This one will loop around for ever.
 ## Props
-#### `data`  
-Type : Array  
-Description : Should be array of things you want to slide.  
+#### `data`
+Type : Array
+Description : Should be array of things you want to slide.
 
 ---
 
-#### `timer`  
-Type : Number  
-Description : Defines gap between each slide as second.  
-Default : `2` 
+#### `timer`
+Type : Number
+Description : Defines gap between each slide as second.
+Default : `2`
 
 ---
 
-#### `filter`  
-Type : String  
-Description : Defines type of filter you want to use when sliding.  
-Default : `simple` 
+#### `filter`
+Type : String
+Description : Defines type of filter you want to use when sliding.
+Default : `simple`
 
 ---
- 
-#### `infinite`  
-Type : Boolean  
-Description : Defines whether your slider should keep looping or not.  
-Default : `false`  
+
+#### `infinite`
+Type : Boolean
+Description : Defines whether your slider should keep looping or not.
+Default : `false`
 
 
-## Filters  
-There are 9 types of filters available for now:   
-+ `simple`  
-+ `bottom-top`  
-+ `top-bottom`  
-+ `right-left`  
-+ `left-right`  
-+ `press`  
-+ `scale`  
-+ `flash`  
-+ `flip`  
+## Filters
+There are 9 types of filters available for now:
++ `simple`
++ `bottom-top`
++ `top-bottom`
++ `right-left`
++ `left-right`
++ `press`
++ `scale`
++ `flash`
++ `flip`
