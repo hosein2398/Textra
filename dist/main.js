@@ -12,7 +12,7 @@ var __vue_create_injector__ = _interopDefault(require('vue-runtime-helpers/dist/
 //
 //
 var script = {
-  name: 'Textra',
+  name: "Textra",
   props: {
     data: {
       type: Array,
@@ -20,7 +20,7 @@ var script = {
     },
     filter: {
       type: String,
-      "default": 'simple'
+      "default": "simple"
     },
     timer: {
       type: Number,
@@ -33,21 +33,21 @@ var script = {
   },
   data: function data() {
     return {
-      defaultStyle: 'transition: 1s;',
+      defaultStyle: "transition: all 0.5s;",
       currentWord: this.data[0],
       liStl: null,
       dataCounter: 0,
-      displayState: "shown",
+      animationID: null,
       filters: {
-        'simple': ["opacity:0", "opacity:1"],
-        'bottom-top': ["transform:translateY(10px);opacity:0;", "transform:translateY(0px);opacity:1;"],
-        'top-bottom': ["transform:translateY(-10px);opacity:0;", "transform:translateY(0px);opacity:1;"],
-        'right-left': ["transform:translateX(10px);opacity:0;", "transform:translateX(0px);opacity:1;"],
-        'left-right': ["transform:translateX(-10px);opacity:0;", "transform:translateX(0px);opacity:1;"],
-        'press': ["letter-spacing: 4px;opacity:0;", "opacity:1;"],
-        'scale': ["transform:scaleY(1.4);opacity:0;", "opacity:1;"],
-        'flash': ["transform:skewX(-70deg);opacity:0;", "transform:skewX(0deg);opacity:1;"],
-        'flip': ["transform:rotateX(-180deg);opacity:0;", "transform:rotate(0deg);opacity:1;"]
+        simple: ["opacity:0", "opacity:1"],
+        "bottom-top": ["transform:translateY(10px);opacity:0;", "transform:translateY(0px);opacity:1;"],
+        "top-bottom": ["transform:translateY(-10px);opacity:0;", "transform:translateY(0px);opacity:1;"],
+        "right-left": ["transform:translateX(10px);opacity:0;", "transform:translateX(0px);opacity:1;"],
+        "left-right": ["transform:translateX(-10px);opacity:0;", "transform:translateX(0px);opacity:1;"],
+        press: ["letter-spacing: 4px;opacity:0;", "opacity:1;"],
+        scale: ["transform:scaleY(1.4);opacity:0;", "opacity:1;"],
+        flash: ["transform:skewX(-70deg);opacity:0;", "transform:skewX(0deg);opacity:1;"],
+        flip: ["transform:rotateX(-180deg);opacity:0;", "transform:rotate(0deg);opacity:1;"]
       }
     };
   },
@@ -57,27 +57,39 @@ var script = {
     }
   },
   created: function created() {
-    var _this = this;
+    var previousTime = 0;
+    var that = this;
 
-    var theInterval = setInterval(function () {
-      _this.liStl = _this.filters[_this.filter][0]; //fixing #5
+    function run(currentTime) {
+      if (previousTime + this.timer * 1000 < currentTime) {
+        //hiding
+        this.liStl = this.filters[this.filter][0];
+      }
 
-      setTimeout(function () {
-        _this.liStl = _this.filters[_this.filter][1];
-        if (_this.dataCounter !== _this.data.length) _this.dataCounter++;
-        _this.currentWord = _this.data[_this.dataCounter];
+      if (previousTime + this.timer * 1000 + 1000 < currentTime) {
+        //showing
+        previousTime = currentTime;
+        this.currentWord = this.data[++this.dataCounter];
+        this.liStl = this.filters[this.filter][1];
 
-        if (_this.dataCounter === _this.data.length) {
-          if (_this.infinite) {
-            // Changing 0 to -1 for temporary bug fix of #2
-            _this.dataCounter = 0;
-            _this.currentWord = _this.data[_this.dataCounter];
+        if (this.dataCounter === this.data.length) {
+          if (this.infinite) {
+            this.dataCounter = 0;
+            this.currentWord = this.data[this.dataCounter];
           } else {
-            clearInterval(theInterval);
+            window.cancelAnimationFrame(this.animationID);
+            return;
           }
         }
-      }, 1000);
-    }, +this.timer * 1000);
+      }
+
+      this.animationID = window.requestAnimationFrame(run.bind(that));
+    }
+
+    this.animationID = window.requestAnimationFrame(run.bind(that));
+  },
+  beforeDestroy: function beforeDestroy() {
+    window.cancelAnimationFrame(this.animationID);
   }
 };
 
@@ -108,8 +120,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-2c23657e_0", {
-    source: ".textra[data-v-2c23657e]{height:auto;width:auto;display:block}",
+  inject("data-v-d9d0826c_0", {
+    source: ".textra[data-v-d9d0826c]{height:auto;width:auto;display:block}",
     map: undefined,
     media: undefined
   });
@@ -117,7 +129,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-2c23657e";
+var __vue_scope_id__ = "data-v-d9d0826c";
 /* module identifier */
 
 var __vue_module_identifier__ = undefined;
