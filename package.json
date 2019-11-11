@@ -14,12 +14,13 @@
   },
   "keywords": [
     "vue",
+    "slider",
     "slide text",
     "text animation"
   ],
   "main": "dist/main.js",
   "module": "dist/main.esm.js",
-  "jsdelivr": "dist/main.umd.min.js",
+  "browser": "dist/main.umd.min.js",
   "scripts": {
     "test": "./node_modules/.bin/ava test/test.js",
     "build": "bili ./src/main.js --format umd-min,cjs,esm --module-name Textra --plugins.vue.css false"
