@@ -1,21 +1,17 @@
 {
-  "name": "vue3-textra",
+  "name": "textra-vue3",
   "description": "Vue3 js text sliding plugin",
   "version": "1.0.0",
-  "author": "tompig",
+  "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/PigTom-c/Textra-vue3",
-  "bugs": {
-    "url": "https://github.com/PigTom-c/Textra-vue3/issues"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/PigTom-c/Textra-vue3"
   },
   "keywords": [
+    "vue",
     "vue3",
-    "vite",
-    "typescript",
+    "slider",
     "slide text",
     "text animation"
   ],
@@ -25,15 +21,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "vue": "^3.2.37",
+    "bili": "^4.8.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.3.3",
-    "@typescript-eslint/eslint-plugin": "^5.3.0",
-    "@typescript-eslint/parser": "^5.3.0",
-    "prettier": "^2.4.1",
-    "typescript": "^4.5.4",
-    "vite": "^2.9.9",
-    "vue-tsc": "^0.34.7"
-  }
+    "@vitejs/plugin-vue": "^3.1.0",
+    "vite": "^3.1.0"
+  },
+  "files": [
+    "dist"
+  ]
 }
